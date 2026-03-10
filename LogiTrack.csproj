@@ -13,6 +13,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <!-- Swagger/Swashbuckle removed; using built-in OpenAPI support -->
   </ItemGroup>
 
 </Project>

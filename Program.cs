@@ -27,15 +27,33 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+// controllers support
+builder.Services.AddControllers();
+// Endpoints API explorer for OpenAPI
+builder.Services.AddEndpointsApiExplorer();
+
+// register LogiTrackContext; OnConfiguring sets up SQLite
+builder.Services.AddDbContext<LogiTrackContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    // minimal API swagger endpoint
     app.MapOpenApi();
+    
+    // controller swagger middleware
+    // Note as Swashbuckle is deprecated since .NET 9, we use the built-in OpenAPI support instead, as per:
+    // https://stackoverflow.com/questions/79769908/getswagger-does-not-have-an-implementation
+    //app.UseSwagger();
+    //app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+
+// map controller routes
+app.MapControllers();
 
 var summaries = new[]
 {

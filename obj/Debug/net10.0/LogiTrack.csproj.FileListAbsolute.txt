@@ -146,3 +146,4 @@
 /home/ares/code/LogiTrack/obj/Debug/net10.0/LogiTrack.pdb
 /home/ares/code/LogiTrack/obj/Debug/net10.0/LogiTrack.genruntimeconfig.cache
 /home/ares/code/LogiTrack/obj/Debug/net10.0/ref/LogiTrack.dll
+/home/ares/code/LogiTrack/obj/Debug/net10.0/LogiTrack.sourcelink.json
